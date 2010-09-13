@@ -1,0 +1,15 @@
+h1. Shopify Snippets
+
+h2. Description:
+
+A collection of useful Liquid snippets to help speed up theme development for Shopify.
+
+h2. Installation:
+
+If you are developing locally, simply copy the .liquid files into the snippets directory.
+
+If you are developing on a live store, go to the template editor screen, and under snippets create a new snippet with the name of the snippet you want to use (without the .liquid extension). Then copy the code into your new snippet.
+
+h2. Usage:
+
+`{% include 'snippet-name' %}`
