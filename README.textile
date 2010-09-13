@@ -12,4 +12,4 @@ If you are developing on a live store, go to the template editor screen, and und
 
 h2. Usage:
 
-`{% include 'snippet-name' %}`
+@{% include 'snippet-name' %}@
