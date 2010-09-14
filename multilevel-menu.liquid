@@ -1,0 +1,27 @@
+{% comment %}
+
+DEPENDENCY: find-current-url.liquid
+
+{% endcomment}
+
+{% include ‘find-current-url’ %}
+
+<ul class="navigation">
+
+	{% for link in linklists.main-menu.links %}
+		
+		<li{% if forloop.first %} class="first"{% endif %}>
+			<a{% if current_url == link.url %} class="active"{% endif %} href="{{ link.url }}">{{ link.title }}</a>
+			{% capture child_list_handle %}{{ link.title | handle }}{% endcapture %}
+			{% if linklists[child_list_handle] and linklists[child_list_handle].links.size > 0 %}
+				<ul>
+					{% for l in linklists[child_list_handle].links %}
+						<li><a{% if current_url == l.url %} class="active"{% endif %} href="{{ l.url }}">{{ l.title }}</a></li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		</li>
+	
+	{% endfor %}
+
+</ul>
